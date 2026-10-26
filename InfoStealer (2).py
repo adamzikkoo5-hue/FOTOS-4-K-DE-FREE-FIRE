@@ -49,7 +49,7 @@ def history():
                    domain = sublevel_split[0].replace("www.", "")
                    return domain
            except IndexError:
-                   print "URL format error!"
+                   print ("URL format error!")
 
    def analyze(results):
       b=open("chrome1.txt","w")
